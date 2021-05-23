@@ -8,6 +8,10 @@
         <div class="col font-weight-bold">Task</div>
         <div class="col-2 font-weight-bold">Done</div>
       </div>
+      <div class="row" v-for="t in tasks" v-bind:key="t.action">
+        <div class="col">{{t.action}}</div>
+        <div class="col-2">{{t.done}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,7 +21,13 @@ export default {
   name: 'app',
   data() {
     return {
-      name: "Chijioke"
+      name: "Chijioke",
+      tasks: [
+        {action: "Buy Flowers", done: false},
+        {action: "Get shoes", done: false},
+        {action: "Collect tickets", done: true},
+        {action: "Call Ralph", done: false}
+      ]
     }
   }
 }
